@@ -1,5 +1,8 @@
-float squareX, squareY;
+float squareX = -50;
+float squareY = -50;
 int speed = 50;
+int leftColor = #FFFFFF;
+int rightColor = #000000;
 
 void setup() {
   fullScreen();
@@ -26,11 +29,23 @@ void movement() {
 }
 
 void mousePressed() {
+  if (mouseButton == LEFT) {
+    fill(leftColor);
+  }
+  else if (mouseButton == RIGHT) {
+    fill(rightColor);
+  }
   squareX = round(mouseX/speed)*speed;
   squareY = round(mouseY/speed)*speed;
 }
 
 void mouseDragged() {
+    if (mouseButton == LEFT) {
+    fill(leftColor);
+  }
+  else if (mouseButton == RIGHT) {
+    fill(rightColor);
+  }
   squareX = round(mouseX/speed)*speed;
   squareY = round(mouseY/speed)*speed;
 }
