@@ -1,5 +1,4 @@
-int playerX = 500;
-int playerY = 500;
+float squareX, squareY;
 int speed = 50;
 
 void setup() {
@@ -13,23 +12,29 @@ void keyPressed() {
 
 void movement() {
   if (key == 'w') {
-    playerY -= speed;
+    squareY -= speed;
   }
   if (key == 'a') {
-    playerX -= speed;
+    squareX -= speed;
   }
     if (key == 's') {
-    playerY += speed;
+    squareY += speed;
   }
   if (key == 'd') {
-    playerX += speed;
+    squareX += speed;
   }
 }
 
-void display() {
-  square(playerX, playerY, 50);
+void mousePressed() {
+  squareX = round(mouseX/speed)*speed;
+  squareY = round(mouseY/speed)*speed;
+}
+
+void mouseDragged() {
+  squareX = round(mouseX/speed)*speed;
+  squareY = round(mouseY/speed)*speed;
 }
 
 void draw() {
-  display();
+  square(squareX, squareY, 50);
 }
