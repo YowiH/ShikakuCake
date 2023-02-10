@@ -3,53 +3,72 @@ float squareY = -50;
 int gridDistance = 50;
 int leftColor = #FFFFFF;
 int rightColor = #000000;
+int backgroundColor = #000000;
+int gridColor = backgroundColor;
 int lineX, lineY = gridDistance;
+boolean gridON = false;
+
+void setup() {
+  fullScreen();
+  background(backgroundColor);
+}
+
+void draw() {
+  square(squareX, squareY, 50);
+  if (gridON == true) {
+    gridColor = #808080;
+    gridCreation();
+    gridON = false;
+  }
+}
 
 void movement() {
-  if (key == 'w') {
+  if (keyCode == UP) {
     squareY -= gridDistance;
   }
-  if (key == 'a') {
+  if (keyCode == LEFT) {
     squareX -= gridDistance;
   }
-    if (key == 's') {
+    if (keyCode == DOWN) {
     squareY += gridDistance;
   }
-  if (key == 'd') {
+  if (keyCode == RIGHT) {
     squareX += gridDistance;
   }
 }
 
 void gridCreation() {
   while (lineX < displayWidth) {
-    stroke(leftColor);
+    stroke(gridColor);
     line(lineX, 0, lineX, displayHeight);
     lineX += 50;
   }
   while (lineY < displayHeight) {
-    stroke(leftColor);
+    stroke(gridColor);
     line(0, lineY, displayWidth, lineY);
     lineY += 50;
   }
 }
 
-void setup() {
-  fullScreen();
-  background(#000000);
-}
-
 void keyPressed() {
   movement();
+  if (key == 'g') {
+    gridON = true;
+  }
+  if (key == 'r') {
+    background(backgroundColor);
+    gridColor = backgroundColor;
+  }
 }
 
 void mousePressed() {
   if (mouseButton == LEFT) {
     fill(leftColor);
-    stroke(rightColor);
+    stroke(gridColor);
   }
   else if (mouseButton == RIGHT) {
     fill(rightColor);
-    stroke(leftColor);
+    stroke(gridColor);
   }
   squareX = round(mouseX/gridDistance)*gridDistance;
   squareY = round(mouseY/gridDistance)*gridDistance;
@@ -58,15 +77,12 @@ void mousePressed() {
 void mouseDragged() {
     if (mouseButton == LEFT) {
     fill(leftColor);
+    stroke(gridColor);
   }
   else if (mouseButton == RIGHT) {
     fill(rightColor);
+    stroke(gridColor);
   }
   squareX = round(mouseX/gridDistance)*gridDistance;
   squareY = round(mouseY/gridDistance)*gridDistance;
-}
-
-void draw() {
-  square(squareX, squareY, 50);
-  gridCreation();
 }
