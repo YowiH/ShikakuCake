@@ -4,4 +4,4 @@ class Background {
         this.iro = iro_;
     }
 }
-Background background = new Background(#4f759b);
+Background background = new Background(#000000);

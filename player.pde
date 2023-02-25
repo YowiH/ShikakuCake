@@ -1,5 +1,5 @@
 class Player {
-    PImage stickman;
+    PImage img;
     color iro;
     int size, x, y, speed;
     boolean up, left, down, right;
@@ -9,10 +9,10 @@ class Player {
         this.iro = iro_;
     }
     void sprite() {
-        this.stickman = loadImage("sprites/stickman.png");
+        this.img = loadImage("sprites/p2.png");
     }
-    void spawn() {
-        image(this.stickman, this.x, this.y, this.size, this.size);
+    void display() {
+        image(this.img, this.x, this.y, this.size, this.size);
     }
     void move() {
         if (keyCode == LEFT) {
