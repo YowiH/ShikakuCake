@@ -1,16 +1,29 @@
 class Player {
     color iro;
-    int size;
-    float x, y;
-    Player(int size_, color iro_, float x_, float y_) {
+    int size, x, y, speed;
+    boolean up, left, down, right;
+    Player(int size_, int speed_, color iro_) {
         this.size = size_;
+        this.speed = speed_;
         this.iro = iro_;
-        this.x = x_;
-        this.y = y_;
     }
     void spawn() {
         fill(this.iro);
         square(this.x, this.y, this.size);
     }
+    void move() {
+        if (keyCode == LEFT) {
+            this.x -= this.speed;
+        }
+        else if (keyCode == UP) {
+            this.y -= this.speed;
+        }
+        else if (keyCode == RIGHT) {
+            this.x += this.speed;
+        }
+        else if (keyCode == DOWN) {
+            this.y += this.speed;
+        }
+    }
 }
-Player player = new Player(50, #a71d31, 500, 500);
+Player player = new Player(50, 50, #a71d31);

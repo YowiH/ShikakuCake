@@ -1,8 +1,12 @@
 void setup() {
     fullScreen();
-    background(background.iro);
 }
 
 void draw() {
+    background(background.iro);
     player.spawn();
+}
+
+void keyPressed() {
+    player.move();
 }
