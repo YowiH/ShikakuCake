@@ -3,13 +3,11 @@ class Player {
     color iro;
     int size, x, y, speed;
     boolean up, left, down, right;
-    Player(int size_, int speed_, color iro_) {
+    Player(int size_, int speed_, color iro_, PImage stickman_) {
         this.size = size_;
         this.speed = speed_;
         this.iro = iro_;
-    }
-    void sprite() {
-        this.stickman = loadImage("sprites/stickman.png");
+        this.stickman = stickman_;
     }
     void spawn() {
         image(this.stickman, this.x, this.y, this.size, this.size);
@@ -29,4 +27,4 @@ class Player {
         }
     }
 }
-Player player = new Player(50, 50, #a71d31);
+Player player = new Player(50, 50, #a71d31, loadImage("stickman.png"));

@@ -1,5 +1,6 @@
 void setup() {
     fullScreen();
+    player.sprite();
 }
 
 void draw() {
