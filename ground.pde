@@ -1,13 +1,13 @@
-class Wall {
+class Ground {
     PImage img;
     int imgNumber;
     int size, x, y;
-    Wall(int size_, int imgNumber_) {
+    Ground(int size_, int imgNumber_) {
         this.size = size_;
         this.imgNumber = imgNumber_;
     }
     void sprite() {
-        this.img = loadImage("sprites/walls/"+this.imgNumber+".png");
+        this.img = loadImage("sprites/grounds/"+this.imgNumber+".png");
     }
     void display() {
         image(this.img, this.x, this.y, this.size, this.size);
@@ -17,4 +17,4 @@ class Wall {
         this.y = round(mouseY/grid.size)*grid.size;
     }
 }
-Wall wood = new Wall(50, 1);
+Ground grass = new Ground(50, 1);

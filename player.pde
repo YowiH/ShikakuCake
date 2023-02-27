@@ -1,15 +1,17 @@
 class Player {
     PImage img;
+    int imgNumber;
     color iro;
     int size, x, y, speed;
     boolean up, left, down, right;
-    Player(int size_, int speed_, color iro_) {
+    Player(int size_, int speed_, color iro_, int imgNumber_) {
         this.size = size_;
         this.speed = speed_;
         this.iro = iro_;
+        this.imgNumber = imgNumber_;
     }
     void sprite() {
-        this.img = loadImage("sprites/p2.png");
+        this.img = loadImage("sprites/players/"+this.imgNumber+".png");
     }
     void display() {
         image(this.img, this.x, this.y, this.size, this.size);
@@ -29,4 +31,4 @@ class Player {
         }
     }
 }
-Player player = new Player(50, 50, #a71d31);
+Player player = new Player(50, 50, #a71d31, 2);

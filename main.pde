@@ -9,11 +9,13 @@ void setup() {
 
 void draw() {
     background(background.iro);
+    cake.regenerate();
     // The display order acts like z-index
     grass.display();
     cake.display();
     player.display();
     wood.display();
+    grid.display();
 }
 
 void keyPressed() {
