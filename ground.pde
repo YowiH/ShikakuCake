@@ -12,7 +12,7 @@ class Ground {
     void display() {
         image(this.img, this.x, this.y, this.size, this.size);
     }
-    void aim() {
+    void position() {
         this.x = round(mouseX/grid.size)*grid.size;
         this.y = round(mouseY/grid.size)*grid.size;
     }

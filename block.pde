@@ -1,6 +1,7 @@
-void change() {
+void newBlock() {
     if (mouseButton == LEFT) {
-        grass.aim();
+        grass.position();
+        
     }
     else if (mouseButton == RIGHT) {
         

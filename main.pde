@@ -23,9 +23,9 @@ void keyPressed() {
 }
 
 void mousePressed() {
-    change();
+    newBlock();
 }
 
 void mouseDragged() {
-    change();
+    newBlock();
 }
