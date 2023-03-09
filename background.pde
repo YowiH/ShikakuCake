@@ -12,20 +12,21 @@ class Grid {
         this.x = x_;
         this.y = y_;
     }
-    
-    void rubik() {
-        ArrayList<Grid> grid_block = new ArrayList<Grid>();
-        for (int i = 0; i < 21; i++) {
-            for (int[] n = new int[21]; n[i] < 39; n[i]++) {
-                grid_block.add(new Grid(0, 0));
-                Grid miniGrid = grid_block.get(i);
-                square(grid_block.x, grid_block.y, shikaku_size);
-                this.x += 50;
-            }
-            this.x = 0;
-            this.y += 50;
-        }
-    }
 }
 
 Grid grid = new Grid(0, 0);
+
+void rubik() {
+        ArrayList<Grid> grid_arraylist = new ArrayList<Grid>();
+        int rx = 0;
+        int ry = 0;
+        for (int i = 0; i < displayHeight/shikaku_size+1; i++) {
+            for (int[] n = new int[displayHeight/shikaku_size+1]; n[i] < displayWidth/shikaku_size+1; n[i]++) {
+                grid_arraylist.add(new Grid(rx, ry));
+                square(rx, ry, shikaku_size);
+                rx += shikaku_size;
+            }
+            rx = 0;
+            ry += shikaku_size;
+        }
+    }

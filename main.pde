@@ -4,7 +4,7 @@ void setup() {
 }
 
 void draw() {
-    grid.rubik();
+    rubik();
     player.displaySprite();
 }
 

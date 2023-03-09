@@ -1,4 +1,4 @@
-int shikaku_size = 50;
+public int shikaku_size = 50;
 
 class Shikaku {
     PImage img;
@@ -7,10 +7,12 @@ class Shikaku {
     color iro;
     int x, y;
     int speed;
-    Shikaku(String type_, int imgNumber_, int speed_) {
+    Shikaku(String type_, int imgNumber_, int speed_, int x_, int y_) {
         this.type = type_;
         this.imgNumber = imgNumber_;
         this.speed = speed_;
+        this.x = x_;
+        this.y = y_;
     }
 
     void loadSprite() {
@@ -49,4 +51,4 @@ class Shikaku {
 
 }
 
-Shikaku player = new Shikaku("player", 1, 50);
+Shikaku player = new Shikaku("player", 1, shikaku_size, 900, 550);
