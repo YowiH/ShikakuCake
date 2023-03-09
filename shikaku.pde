@@ -1,6 +1,6 @@
 public int shikaku_size = 50;
 
-class Shikaku {
+public class Shikaku {
     PImage img;
     int imgNumber;
     String type;
@@ -23,15 +23,6 @@ class Shikaku {
         image(this.img, this.x, this.y, shikaku_size, shikaku_size);
     }
 
-    void createBlock() {
-        if (mouseButton == LEFT) {
-
-        }
-        else if (mouseButton == RIGHT) {
-
-        }
-    }
-
     void move() {
         switch (keyCode) {
             case LEFT :
@@ -49,6 +40,28 @@ class Shikaku {
         }
     }
 
+    void positionBlock() {
+        this.x = round(mouseX/shikaku_size)*shikaku_size;
+        this.y = round(mouseY/shikaku_size)*shikaku_size;
+    }
+
 }
 
 Shikaku player = new Shikaku("player", 1, shikaku_size, 900, 550);
+Shikaku stone = new Shikaku("ground", 1, 0, 0, 0);
+Shikaku grass = new Shikaku("ground", 2, 0, 0, 0);
+
+void createBlock() {
+        if (mouseButton == LEFT) {
+            grass.positionBlock();
+            grass.displaySprite();
+            for (int i = 0; i < 30; i++) {
+                if (grid_arraylist.get(i).x == grass.x) {
+                    grid_arraylist.get(i).img = grass.img;
+                }
+            }
+        }
+        else if (mouseButton == RIGHT) {
+
+        }
+    }

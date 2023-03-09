@@ -1,13 +1,19 @@
 void setup() {
     fullScreen();
     player.loadSprite();
+    stone.loadSprite();
+    grass.loadSprite();
 }
 
 void draw() {
-    rubik();
+    grid.rubik();
     player.displaySprite();
 }
 
 void keyPressed() {
     player.move();
+}
+
+void mousePressed() {
+    createBlock();
 }
