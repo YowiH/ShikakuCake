@@ -8,6 +8,7 @@ void setup() {
 void draw() {
     grid.rubik();
     player.displaySprite();
+    blockUI.ui();
 }
 
 void keyPressed() {
