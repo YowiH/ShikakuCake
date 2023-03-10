@@ -52,9 +52,39 @@ public class Shikaku {
     }
 
     void regenerate() {
-        if (player.x == cake.x && player.y == cake.y) {
+        if (player.x == this.x && player.y == this.y) {
             score++;
-            cake.generate();
+            this.generate();
+            if (score >= 5) {
+                enemy1.generate();
+            }
+            if (score >= 10) {
+                enemy2.generate();
+            }
+            if (score >= 15) {
+                enemy3.generate();
+            }
+            if (score >= 20) {
+                enemy4.generate();
+            }
+            if (score >= 25) {
+                enemy5.generate();
+            }
+            if (score >= 30) {
+                enemy6.generate();
+            }
+            if (score >= 35) {
+                enemy7.generate();
+            }
+            if (score >= 40) {
+                enemy8.generate();
+            }
+            if (score >= 45) {
+                enemy9.generate();
+            }
+            if (score >= 50) {
+                enemy10.generate();
+            }
         }
     }
 
@@ -65,11 +95,13 @@ Shikaku stone = new Shikaku("ground", 1, 0, 0, 0);
 Shikaku grass = new Shikaku("ground", 2, 0, 0, 0);
 Shikaku cake = new Shikaku("prize", 1, 0, 0, 0);
 
-void createBlock() {
-        if (mouseButton == LEFT) {
-            
-        }
-        else if (mouseButton == RIGHT) {
-
-        }
-    }
+Shikaku enemy1 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy2 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy3 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy4 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy5 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy6 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy7 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy8 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy9 = new Shikaku("enemy", 1, 0, 0, 0);
+Shikaku enemy10 = new Shikaku("enemy", 1, 0, 0, 0);
