@@ -1,4 +1,5 @@
 public int shikaku_size = 50;
+public int score;
 
 public class Shikaku {
     PImage img;
@@ -45,11 +46,24 @@ public class Shikaku {
         this.y = round(mouseY/shikaku_size)*shikaku_size;
     }
 
+    void generate() {
+        this.x = round(random(100, 900)/shikaku_size)*shikaku_size;
+        this.y = round(random(100, 900)/shikaku_size)*shikaku_size;
+    }
+
+    void regenerate() {
+        if (player.x == cake.x && player.y == cake.y) {
+            score++;
+            cake.generate();
+        }
+    }
+
 }
 
 Shikaku player = new Shikaku("player", 1, shikaku_size, 900, 550);
 Shikaku stone = new Shikaku("ground", 1, 0, 0, 0);
 Shikaku grass = new Shikaku("ground", 2, 0, 0, 0);
+Shikaku cake = new Shikaku("prize", 1, 0, 0, 0);
 
 void createBlock() {
         if (mouseButton == LEFT) {

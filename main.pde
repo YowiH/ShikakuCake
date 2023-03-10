@@ -3,12 +3,16 @@ void setup() {
     player.loadSprite();
     stone.loadSprite();
     grass.loadSprite();
+    cake.loadSprite();
+    cake.generate();
 }
 
 void draw() {
     grid.rubik();
+    ui();
+    cake.displaySprite();
+    cake.regenerate();
     player.displaySprite();
-    blockUI.ui();
 }
 
 void keyPressed() {
