@@ -53,13 +53,7 @@ Shikaku grass = new Shikaku("ground", 2, 0, 0, 0);
 
 void createBlock() {
         if (mouseButton == LEFT) {
-            grass.positionBlock();
-            grass.displaySprite();
-            for (int i = 0; i < 30; i++) {
-                if (grid_arraylist.get(i).x == grass.x) {
-                    grid_arraylist.get(i).img = grass.img;
-                }
-            }
+            
         }
         else if (mouseButton == RIGHT) {
 

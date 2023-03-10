@@ -7,12 +7,12 @@ class Background {
 Background background = new Background(#308030);
 
 class Grid {
-    PImage img;
     int x, y;
-    Grid(int x_, int y_, PImage img_) {
+    color grid_color;
+    Grid(int x_, int y_, color grid_color_) {
         this.x = x_;
         this.y = y_;
-        this.img = img_;
+        this.grid_color = grid_color_;
     }
 
     void rubik() {
@@ -20,8 +20,9 @@ class Grid {
         int ry = 0;
         for (int i = 0; i < displayHeight/shikaku_size+1; i++) {
             for (int[] n = new int[displayHeight/shikaku_size+1]; n[i] < displayWidth/shikaku_size+1; n[i]++) {
-                grid_arraylist.add(new Grid(rx, ry));
-                image(this.img, rx, ry, shikaku_size, shikaku_size);
+                grid_arraylist.add(new Grid(rx, ry, this.grid_color));
+                square(rx, ry, shikaku_size);
+                fill(this.grid_color);
                 rx += shikaku_size;
             }
             rx = 0;
@@ -30,5 +31,5 @@ class Grid {
     }
 }
 
-Grid grid = new Grid(0, 0, stone.img);
+Grid grid = new Grid(0, 0, #202020);
 ArrayList<Grid> grid_arraylist = new ArrayList<Grid>();
