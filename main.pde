@@ -11,7 +11,7 @@ void setup() {
 
 void draw() {
     if (playing == false) {
-        background(#000000);
+        background(#ED1C24);
         textSize(100);
         text("Shikaku Cake", displayWidth/3, displayHeight/3);
         triangle(820, 500, 820, 700, 1045, 600);
