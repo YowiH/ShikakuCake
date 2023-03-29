@@ -31,5 +31,5 @@ class Grid {
     }
 }
 
-Grid grid = new Grid(0, 0, #20202020);
+Grid grid = new Grid(0, 0, #202020);
 ArrayList<Grid> grid_arraylist = new ArrayList<Grid>();
