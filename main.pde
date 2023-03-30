@@ -14,7 +14,7 @@ void draw() {
         background(#ED1C24);
         textSize(100);
         text("Shikaku Cake", displayWidth/3, displayHeight/3);
-        triangle(820, 500, 820, 700, 1045, 600);
+        triangle(620, 400, 620, 600, 845, 500);
     }
     if (playing == true) {
         grid.rubik();
@@ -34,8 +34,8 @@ void keyPressed() {
 
 void mouseClicked() {
     if (playing == false) {
-        if (820 < mouseX && mouseX < 1045) {
-            if (500 < mouseY && mouseY < 700) {
+        if (620 < mouseX && mouseX < 845) {
+            if (400 < mouseY && mouseY < 600) {
                 playing = true;
             }
         }

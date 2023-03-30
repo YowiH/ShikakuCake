@@ -47,8 +47,8 @@ public class Shikaku {
     }
 
     void generate() {
-        this.x = round(random(100, 900)/shikaku_size)*shikaku_size;
-        this.y = round(random(100, 900)/shikaku_size)*shikaku_size;
+        this.x = round(random(100, displayWidth-300)/shikaku_size)*shikaku_size;
+        this.y = round(random(100, displayHeight-300)/shikaku_size)*shikaku_size;
     }
 
     void regenerate() {
